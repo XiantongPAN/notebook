@@ -1,6 +1,5 @@
 # packages
 
-
 It is in the package `java.util`
 
 ```java
@@ -10,9 +9,14 @@ import java.util.function.UnaryOperator;
 import sun.misc.SharedSecrets;
 ```
 
-> the packages in `java.util.function` is for functional programing in java8. See also in java8 programming.
+> the packages in `java.util.function` is for functional programing in java8. All the 3 are `FunctionalInterface`. See also in java8 programming.
 
-> `sun.misc.SharedSecrets` is waiting for learning.
+
+> `sun.misc.SharedSecrets`: in the method `private void readObject` a static method is used (to improve performance):
+>
+> ```java
+>  SharedSecrets.getJavaOISAccess().checkArray(s, Object[].class, capacity);
+> ```
 
 # class structure
 
@@ -24,7 +28,23 @@ RandomAccess, Cloneable, java.io.Serializable
 ```
 
 > 知识点
-> 1. It is a generic type
-> 2. `implement Serializable` : [see the usage of serialVersionUID](http://swiftlet.net/archives/1268)
-> 3. 
+>
+> * It is a generic type
+> * `implement Serializable` : [see the usage of serialVersionUID](http://swiftlet.net/archives/1268)
+> * `RandomAccess` is a marker interface.
+
+# Constructor
+
+```java
+public ArrayList(int initialCapacity)
+public ArrayList(Collection<? extends E> c)
+```
+
+
+
+>end
+
+
+
+
 
