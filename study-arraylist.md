@@ -135,6 +135,36 @@ private String outOfBoundsMsg(int index) {
 the `get` method is one of the most commonly used method in list. There are two private method be designed to support the `get` method. If `throw new exception` appears many times in your program, you can also use this way to design.
 
 
+### `public void sort(Comparator<? super E> c)`
+```java
+@Override
+@SuppressWarnings("unchecked")
+public void sort(Comparator<? super E> c) {
+    final int expectedModCount = modCount;
+    Arrays.sort((E[]) elementData, 0, size, c);
+    if (modCount != expectedModCount) {
+        throw new ConcurrentModificationException();
+    }
+    modCount++;
+}
+```
+
+* `modCount` is used here to concurrent problem.
+* the way to sort is put into `Arrays.class`
+* it override `sort` in `List<E>`    
+```java
+@SuppressWarnings({"unchecked", "rawtypes"})
+default void sort(Comparator<? super E> c) {
+    Object[] a = this.toArray();
+    Arrays.sort(a, (Comparator) c);
+    ListIterator<E> i = this.listIterator();
+    for (Object e : a) {
+        i.next();
+        i.set((E) e);
+    }
+}
+```
+
 > end
 
 
