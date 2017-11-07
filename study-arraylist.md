@@ -132,7 +132,7 @@ private String outOfBoundsMsg(int index) {
 }
 ```
 
-the `get` method is one of the most commonly used method in list. There are two private method be designed to support the `get` method. If `throw new exception` appear many times in your program, you can also use this way to design.
+the `get` method is one of the most commonly used method in list. There are two private method be designed to support the `get` method. If `throw new exception` appears many times in your program, you can also use this way to design.
 
 
 > end
