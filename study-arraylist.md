@@ -58,6 +58,12 @@ public ArrayList(Collection<? extends E> c) {
 }
 ```
 
+* `Collection<? extends E>` ? is in the subclass of E
+
+
+
+
+
 
 
 # public method
