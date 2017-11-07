@@ -17,6 +17,7 @@ import sun.misc.SharedSecrets;
 > ```java
 >  SharedSecrets.getJavaOISAccess().checkArray(s, Object[].class, capacity);
 > ```
+> [Examples](https://www.programcreek.com/java-api-examples/index.php?api=sun.misc.SharedSecrets)
 
 # class structure
 
@@ -27,20 +28,57 @@ implements List<E>,
 RandomAccess, Cloneable, java.io.Serializable
 ```
 
-> 知识点
->
-> * It is a generic type
-> * `implement Serializable` : [see the usage of serialVersionUID](http://swiftlet.net/archives/1268)
-> * `RandomAccess` is a marker interface.
+
+* It is a generic type
+* `implement Serializable` : [see the usage of serialVersionUID](http://swiftlet.net/archives/1268)
+* `RandomAccess` is a marker interface.
 
 # Constructor
 
 ```java
 public ArrayList(int initialCapacity)
+public ArrayList() -> ArrayList(10)
 public ArrayList(Collection<? extends E> c)
 ```
 
 
+### `public ArrayList(Collection<? extends E> c)`
+```java
+
+public ArrayList(Collection<? extends E> c) {
+    elementData = c.toArray();
+    if ((size = elementData.length) != 0) {
+        // c.toArray might (incorrectly) not return Object[] (see 6260652)
+        if (elementData.getClass() != Object[].class)
+            elementData = Arrays.copyOf(elementData, size, Object[].class);
+    } else {
+        // replace with empty array.
+        this.elementData = EMPTY_ELEMENTDATA;
+    }
+}
+```
+
+
+
+# public method
+
+## `public void trimToSize`
+
+```java
+public void trimToSize() {
+    modCount++;
+    if (size < elementData.length) {
+        elementData = (size == 0)
+          ? EMPTY_ELEMENTDATA
+          : Arrays.copyOf(elementData, size);
+    }
+}
+
+```
+trim the `ArrayList` to its current size
+
+* `modCount` is the times that the list be modified.
+* `EMPTY_ELEMENTDATA` is {}
 
 >end
 
