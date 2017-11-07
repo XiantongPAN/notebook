@@ -60,7 +60,7 @@ public ArrayList(Collection<? extends E> c) {
 
 # public method
 
-## `public void trimToSize`
+### `public void trimToSize`
 
 ```java
 public void trimToSize() {
@@ -78,6 +78,61 @@ trim the `ArrayList` to its current size. When the length of list and the number
 * `modCount` is the times that the list be modified.
 * `EMPTY_ELEMENTDATA` is {}
 
+
+# commonly used method in array list
+
+### public int indexOf(Object o)
+```java
+public int indexOf(Object o) {
+    if (o == null) {
+        for (int i = 0; i < size; i++)
+            if (elementData[i]==null)
+                return i;
+    } else {
+        for (int i = 0; i < size; i++)
+            if (o.equals(elementData[i]))
+                return i;
+    }
+    return -1;
+}
+```
+* `indexOf(null)` returns the position of `null`
+* `indexOf(object)` returns the position of object
+* if not found return -1
+
+Here consider the `ArrayList<Integer>`: `indexOf(5)` will first be converted as `indexOf(new Integer(5))`. Then Integer is Object, it overides the `equals` method. 
+
+See the `equals` method in `Integer.class`:
+```java
+public boolean equals(Object obj) {
+    if (obj instanceof Integer) {
+        return value == ((Integer)obj).intValue();
+    }
+    return false;
+}
+```
+
+`o.equals(elementData[i])` is equivalant to `5 == elementData[i]`
+
+### `public E get(int index)`
+```java
+public E get(int index) {
+    rangeCheck(index);
+
+    return elementData(index);
+}
+
+private void rangeCheck(int index) {
+    if (index >= size)
+        throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
+}
+
+private String outOfBoundsMsg(int index) {
+    return "Index: "+index+", Size: "+size;
+}
+```
+
+the `get` method is one of the most commonly used method in list. There are two private method be designed to support the `get` method. If `throw new exception` appear many times in your program, you can also use this way to design.
 
 
 > end
