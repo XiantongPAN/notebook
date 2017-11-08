@@ -149,7 +149,7 @@ public void sort(Comparator<? super E> c) {
 }
 ```
 
-* `modCount` is used here to concurrent problem.
+* `modCount` is used here to deal with concurrent problem.
 * the way to sort is put into `Arrays.class`
 * it override `sort` in `List<E>`    
 ```java
