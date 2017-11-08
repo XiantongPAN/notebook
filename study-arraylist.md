@@ -165,7 +165,7 @@ default void sort(Comparator<? super E> c) {
 }
 ``` 
 
-### we
+### public E remove(int index)
 
 ```java
 public E remove(int index) {
