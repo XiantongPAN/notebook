@@ -9,5 +9,6 @@
 ## Learn jdk source code
 
 * [Study ArrayList](study-arraylist.md)
+* [Study Hashmap](study-hashmap.md)
 * [article in new part](article-in-new-part.md)
 
