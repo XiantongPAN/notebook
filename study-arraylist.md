@@ -185,7 +185,8 @@ public E remove(int index) {
 
     ```
 
-
+* in all kind of `remove` method, you can return void or ** return the removed value**.
+* notice that `elementData[--size] = null` is to release memory. **Learn more in GC**
 > end
 
 
