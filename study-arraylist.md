@@ -4,7 +4,7 @@ It is in the package `java.util`
 
 ```java
 import java.util.function.Consumer;
-import java.util.function.Predicate;
+import java.ut
 import java.util.function.UnaryOperator;
 import sun.misc.SharedSecrets;
 ```
@@ -31,6 +31,21 @@ RandomAccess, Cloneable, java.io.Serializable
 * It is a generic type
 * `implement Serializable` : [see the usage of serialVersionUID](http://swiftlet.net/archives/1268)
 * `RandomAccess` is a marker interface.
+
+
+# Field
+```java
+/**
+ * The array buffer into which the elements of the ArrayList are stored.
+ * The capacity of the ArrayList is the length of this array buffer. Any
+ * empty ArrayList with elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA
+ * will be expanded to DEFAULT_CAPACITY when the first element is added.
+ */
+transient Object[] elementData;
+```
+* it is transient, it means not serializable. Learn transient [here](https://www.javaworld.com/article/2074911/learn-java/java-se-transience.html) or [in Chinese version](http://www.importnew.com/12611.html)
+* it is defualt and **not private** to simplify nested class access.
+
 
 # Constructor
 
@@ -187,6 +202,29 @@ public E remove(int index) {
 
 * in all kind of `remove` method, you can return void or ** return the removed value**.
 * notice that `elementData[--size] = null` is to release memory. **Learn more in GC**
+
+
+
+# private method
+
+### grow
+```java
+private void grow(int minCapacity) {
+    // overflow-conscious code
+    int oldCapacity = elementData.length;
+    int newCapacity = oldCapacity + (oldCapacity >> 1);
+    if (newCapacity - minCapacity < 0)
+        newCapacity = minCapacity;
+    if (newCapacity - MAX_ARRAY_SIZE > 0)
+        newCapacity = hugeCapacity(minCapacity);
+    // minCapacity is usually close to size, so this is a win:
+    elementData = Arrays.copyOf(elementData, newCapacity);
+}
+
+```
+
+* `newCapacity` is 3 times `oldCapacity`
+
 > end
 
 
