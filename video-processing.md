@@ -10,3 +10,4 @@ As shown in the figure, when encoding the image, we can consider the spacial red
 
 While for video which is composed by a set of image frames, there is a temporal redundancy. 
 
+![](/assets/video_compression_process.PNG)
