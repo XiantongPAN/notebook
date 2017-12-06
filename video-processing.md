@@ -33,10 +33,23 @@ The way to do jointing should also be concerned carefully. Because the images ta
 ## 3. Projection methods
 Here we mainly introduce 2 projection methods which are Equirectangular projection and Cube projection. 
 Consider there is a sphere with the spherical coordinate $$(r, \theta, \phi)$$. The radius of sphere is irrelevant of our problem. $$\theta$$ and $$\phi$$ can describe a position. For each position, there is a pixel there. The projection is to find a transform of $$(\theta, \phi)$$ to the plane coordinate $$(x, y)$$.
-
-
+![](/assets/640px-3D_Spherical.svg.png)
+(image from wiki)
 ### a. Equirectangular projection
+Equirectangular projection(ERP) is the most simple method. 
 
+I may first show the transform equation:
+
+$$
+x=(\theta-\theta_0)cos\phi_0
+$$
+
+$$
+y=\phi-\phi_0
+$$
+
+
+$$(\theta_0, \phi_0)$$ is the original point that we choose. 
 
 ### b. Cube projection
 
