@@ -29,8 +29,10 @@ Unlike other kind of videos, the 360-degree video is taken by several cameras at
 
 This camera has two camera lens, for each lens it has 210 degree viewing angle. So when we combine the information that the two lens get, we can obtain a 360-degree information around the camera.
 
-The way to do jointing should also be concerned carefully. Because the images taken by different lens will contain some overlap region. 
+The way to do jointing should also be concerned carefully. Because the images taken by different lens will contain some overlapped region. Here are many tricks and algorithms for doing this which we may not discuss here. Suppose the image data has constructed to a sphere. We can use spherical coordinates to describe the position of each pixels. They are not in one plane, thus we need to do projection to a plane.
 ## 3. Projection methods
+Here we mainly introduce 2 projection methods which are Equirectangular projection and Cube projection. 
+
 
 ### a. Equirectangular projection
 
