@@ -75,6 +75,8 @@ $$(\theta_0, \phi_0)$$ is the original point that we choose.
 
 ### b. Cube projection
 
-
+https://docs.unity3d.com/Manual/class-Cubemap.html
 
 ## References
+Polytechnique university EIE546 course website: http://www.eie.polyu.edu.hk/~ylchan/teaching/EIE546VT/EIE546ylchan2017.htm
+
