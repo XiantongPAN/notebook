@@ -23,9 +23,11 @@ In this article, we will mainly introduce the coding of 360-degree video. Until 
 
 ## 2. Introduction to 360-degree video
 
-Unlike other kind of videos, the 360-degree video is taken by several cameras at the same time. 
+Unlike other kind of videos, the 360-degree video is taken by several cameras at the same time. For example, 'Instra360 Air' is a special designed camera for Android users. 
 
+![](/assets/Instra360AirCamera.jpg)
 
+This camera has two camera lens, for each lens it has 210 degree viewing angle. So when we combine the information that the two lens get, we can obtain a 360-degree information around the camera.
 ## 3. Projection methods
 
 ### a. Equirectangular projection
