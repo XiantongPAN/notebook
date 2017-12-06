@@ -32,6 +32,7 @@ This camera has two camera lens, for each lens it has 210 degree viewing angle. 
 The way to do jointing should also be concerned carefully. Because the images taken by different lens will contain some overlapped region. Here are many tricks and algorithms for doing this which we may not discuss here. Suppose the image data has constructed to a sphere. We can use spherical coordinates to describe the position of each pixels. They are not in one plane, thus we need to do projection to a plane.
 ## 3. Projection methods
 Here we mainly introduce 2 projection methods which are Equirectangular projection and Cube projection. 
+Consider there is a sphere with the spherical coordinate $$(r, \theta, \phi)$$. The radius of sphere is irrelevant of our problem. $$\theta$$ and $$\phi$$ can describe a position. For each position, there is a pixel there. The projection is to find a transform of $$(\theta, \phi)$$ to the plane coordinate $$(x, y)$$.
 
 
 ### a. Equirectangular projection
