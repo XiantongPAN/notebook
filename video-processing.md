@@ -30,11 +30,33 @@ Unlike other kind of videos, the 360-degree video is taken by several cameras at
 This camera has two camera lens, for each lens it has 210 degree viewing angle. So when we combine the information that the two lens get, we can obtain a 360-degree information around the camera.
 
 The way to do jointing should also be concerned carefully. Because the images taken by different lens will contain some overlapped region. Here are many tricks and algorithms for doing this which we may not discuss here. Suppose the image data has constructed to a sphere. We can use spherical coordinates to describe the position of each pixels. They are not in one plane, thus we need to do projection to a plane.
+
+
 ## 3. Projection methods
-Here we mainly introduce 2 projection methods which are Equirectangular projection and Cube projection. 
+The team JEVT(Joint Video Exploration Team on Future Video coding, https://jvet.hhi.fraunhofer.de/
+) is working on the coding methods. They has design a library called '360Lib'. Here I list a table to show the projection formats that is supported in 360Lib:
+
+|Index|Projection format|Abbreviation form|
+|----|----|---|
+|0|Equirectangular|ERP|
+|1|Cubemap|CMP|
+|2|Euqal-area|EAP|
+|3|Octahedron|OHP|
+|4|Viewport generation using rectilinear projection|-|
+|5|Icosahedron|ISP|
+|6|Craster Parabolic Projection for CPP-PSNR calculation|-|
+|7|Truncated Square Pyramid|TSP|
+|8|Segmented Sphere Projection|SSP|
+|9|Adjusted Cubemap Projection|ACP|
+|10|Rotated Sphere Projection|RSP|
+
+
+Here we mainly introduce the first two projection methods which are Equirectangular projection and Cubemap(Cube projection). 
 Consider there is a sphere with the spherical coordinate $$(r, \theta, \phi)$$. The radius of sphere is irrelevant of our problem. $$\theta$$ and $$\phi$$ can describe a position. For each position, there is a pixel there. The projection is to find a transform of $$(\theta, \phi)$$ to the plane coordinate $$(x, y)$$.
 ![](/assets/640px-3D_Spherical.svg.png)
 (image from wiki)
+
+
 ### a. Equirectangular projection
 Equirectangular projection(ERP) is the most simple method. 
 
@@ -54,4 +76,5 @@ $$(\theta_0, \phi_0)$$ is the original point that we choose.
 ### b. Cube projection
 
 
-### c. other projection methods
+
+## References
