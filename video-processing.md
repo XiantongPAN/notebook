@@ -29,7 +29,7 @@ Unlike other kind of videos, the 360-degree video is taken by several cameras at
 
 This camera has two camera lens, for each lens it has 210 degree viewing angle. So when we combine the information that the two lens get, we can obtain a 360-degree information around the camera.
 
-The way to do jointing should also be concerned carefully. 
+The way to do jointing should also be concerned carefully. Because the images taken by different lens will contain some overlap region. 
 ## 3. Projection methods
 
 ### a. Equirectangular projection
