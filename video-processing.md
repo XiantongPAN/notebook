@@ -2,7 +2,7 @@
 
 ## 1. Brief introduction about video coding
 
-The task of coding is to convert any kind of information to a binary form. The key point of coding is to find a way to compress the information. Because the binary data is often transmitted through network. If the size of information is compressed to a lower size, the load of network transmission will be reduced.
+The task of coding is to convert any kind of information to a binary form. The key point of coding is to find a way to compress the information. Because the binary data is often transmitted through network. If the size of information is compressed to a lower size, the load of network transmission will be reduced. 
 
 The image shows some common coding methods for Text, Image and Video compression: 
 
