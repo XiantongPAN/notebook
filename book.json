@@ -1,9 +1,4 @@
 {
-    "plugins": ["mathjax"],
+    "plugins": ["ketax"]
     
-    "pluginsConfig": {
-        "mathjax":{
-            "forceSVG": true
-        }
-    }
 }
