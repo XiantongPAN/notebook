@@ -1,4 +1,4 @@
 {
-    "plugins": ["ketax"]
+    "plugins": ["mathjax"]
     
 }
